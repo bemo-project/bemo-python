@@ -19,7 +19,9 @@ setup(
         'tests',
         'example',
     )),
-    install_requires=(),
+    install_requires=(
+        'Jinja2==2.8',
+    ),
     extras_require={},
     include_package_data=True,
     zip_safe=False,
