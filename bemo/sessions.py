@@ -13,7 +13,7 @@ XHOOK_SCRIPT_URL = '//cdn.rawgit.com/jpillora/xhook/1.3.5/dist/xhook.min.js'
 class Session(object):
     def __init__(self, wd=None, xhook_script_url=XHOOK_SCRIPT_URL):
         """
-        Initializez session.
+        Initializes session.
 
         :param wd: Web driver
         :param xhook_script_url: URL to XHook script
