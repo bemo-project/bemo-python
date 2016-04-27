@@ -1,4 +1,4 @@
-(function(window, document, bemo) {
+(function(window, document, bemoContext) {
 var head,
     script;
 
@@ -8,7 +8,7 @@ if (window.xhook === void 0) {
 
     script.setAttribute('type', 'text/javascript');
     script.setAttribute('async', false);
-    script.setAttribute('src', bemo.XHookScriptURL);
+    script.setAttribute('src', bemoContext.XHookScriptURL);
 
     head.appendChild(script);
 }

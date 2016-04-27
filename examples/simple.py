@@ -12,4 +12,4 @@ tools.set_driver(wd)
 tools.visit('https://accounts.google.com/SignUp')
 
 with bemo.Session(wd=wd) as session:
-    session.inject()
+    session.handle('InputValidator').inject()

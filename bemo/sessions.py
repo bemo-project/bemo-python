@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from bemo import templates
+from bemo import handlers, templates
 
 __all__ = (
     'Session',
@@ -20,6 +20,7 @@ class Session(object):
         """
         self._wd = wd
         self._xhook_script_url = xhook_script_url
+        self._xhook_handlers = []
 
     def __enter__(self):
         return self
@@ -27,14 +28,24 @@ class Session(object):
     def __exit__(self, *args):
         self.disable()
 
-    def handle(self):
-        pass
+    def handle(self, urlpart, **kwargs):
+        self.add_handler(handlers.Handler(urlpart, **kwargs))
+
+        return self
+
+    def add_handler(self, handler):
+        self._xhook_handlers.append(handler)
+
+        return self
 
     def inject(self):
         script = self._wd.execute_script
 
         script(templates.xhook__initialize({
             'XHookScriptURL': self._xhook_script_url,
+        }))
+        script(templates.xhook__handlers({
+            'handlers': self._xhook_handlers.values(),
         }))
         script(templates.xhook__enable())
 
