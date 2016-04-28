@@ -1,0 +1,15 @@
+(function(window, document, bemoContext) {
+var head,
+    script;
+
+if (window.xhook === void 0) {
+    head = document.getElementsByTagName('head').item(0);
+    script = document.createElement('script');
+
+    script.setAttribute('type', 'text/javascript');
+    script.setAttribute('async', false);
+    script.setAttribute('src', bemoContext.XHookScriptURL);
+
+    head.appendChild(script);
+}
+})(window, window.document, JSON.parse('{{ bemo }}'));
