@@ -29,14 +29,13 @@ class Session(object):
         self.disable()
 
     def handle(self, urlpart, **kwargs):
-        self.add_handler(handlers.Handler(urlpart, **kwargs))
+        handler = handlers.Handler(urlpart, **kwargs)
+        self.add_handler(handler)
 
-        return self
+        return handler
 
     def add_handler(self, handler):
         self._xhook_handlers.append(handler)
-
-        return self
 
     def inject(self):
         script = self._wd.execute_script
@@ -45,7 +44,7 @@ class Session(object):
             'XHookScriptURL': self._xhook_script_url,
         }))
         script(templates.xhook__handlers({
-            'handlers': self._xhook_handlers.values(),
+            'handlers': self._xhook_handlers,
         }))
         script(templates.xhook__enable())
 

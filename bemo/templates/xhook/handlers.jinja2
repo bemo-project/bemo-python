@@ -1,3 +1,19 @@
 (function(window, xhook, bemoContext) {
-// TBD
+var urlpart,
+    response;
+
+bemoContext.handlers.forEach(function(handler) {
+    xhook.before(function(request) {
+        urlpart = new RegExp(handler.urlpart, 'gi');
+        if (request.url.match(urlpart)) {
+            response = new Response();
+            response.status = handler.status;
+            response.statusText = handler.statusText;
+            response.headers = handler.headers;
+            response.text = JSON.stringify(handler.body);
+
+            return response;
+        }
+    });
+});
 })(window, window.xhook, JSON.parse('{{ bemo }}'));
