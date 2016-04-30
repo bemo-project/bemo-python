@@ -26,7 +26,7 @@ class Session(object):
         return self
 
     def __exit__(self, *args):
-        self.disable()
+        self.release()
 
     def handle(self, urlpart, **kwargs):
         handler = handlers.Handler(urlpart, **kwargs)
@@ -52,9 +52,7 @@ class Session(object):
         }))
         script(templates.xhook__enable())
 
-    enable = inject
-
-    def disable(self):
+    def release(self):
         script = self._wd.execute_script
 
-        script(templates.xhook__disable())
+        script(templates.xhook__release())
