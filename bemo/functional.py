@@ -9,12 +9,16 @@ __all__ = (
 
 
 def partial_match(original, expected):
+    """
+    Tries to match passed dictionaries.
+    Original dictionary MUST have all keys from expected one.
+    """
     original = deep_sort(original.copy())
     expected = deep_sort(expected.copy())
 
     for k, v in expected.items():
-        if k in original:
-            assert v == original[k]
+        if original.get(k) != v:
+            return False
 
     return True
 

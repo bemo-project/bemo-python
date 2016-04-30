@@ -11,6 +11,14 @@ XHOOK_SCRIPT_URL = '//cdn.rawgit.com/jpillora/xhook/1.3.5/dist/xhook.min.js'
 
 
 class Session(object):
+    """
+    Base `bemo` session class.
+
+    Should be used as entry point to work with XHook.
+    Session class contains all needed methods to create, inject and release
+    handlers. The best way to use this class as context manager, but if you
+    want you can use this class in classic way.
+    """
     def __init__(self, wd=None, xhook_script_url=XHOOK_SCRIPT_URL):
         """
         Initializes session.
