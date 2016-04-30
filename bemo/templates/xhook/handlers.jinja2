@@ -1,11 +1,26 @@
-(function(window, xhook, bemoContext) {
-var urlpart,
-    response;
+var xhook = window.xhook,
+    urlpart,
+    response,
+    bemoHandlers,
+    bemoContext = JSON.parse('{{ bemo }}');
 
+// Destroy all previously added handlers if any
+xhook.destroy();
+bemoHandlers = window.bemoHandlers = {};
+
+// Initialize all passed handlers
 bemoContext.handlers.forEach(function(handler) {
+    bemoHandlers[handler.uid] = {
+        callCount: 0,
+        callRequests: []
+    };
+
     xhook.before(function(request) {
         urlpart = new RegExp(handler.urlpart, 'gi');
         if (request.url.match(urlpart)) {
+            bemoHandlers[handler.uid].callCount++;
+            bemoHandlers[handler.uid].callRequests.push(request);
+
             response = new Response();
             response.status = handler.status;
             response.statusText = handler.statusText;
@@ -16,4 +31,3 @@ bemoContext.handlers.forEach(function(handler) {
         }
     });
 });
-})(window, window.xhook, JSON.parse('{{ bemo }}'));

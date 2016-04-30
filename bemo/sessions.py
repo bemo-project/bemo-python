@@ -35,6 +35,10 @@ class Session(object):
         return handler
 
     def add_handler(self, handler):
+        # Inject web driver into handler to make possibility to work with
+        # asserts. And, yes, I know this is not good idea, but ¯\_(ツ)_/¯
+        handler._wd = self._wd
+
         self._xhook_handlers.append(handler)
 
     def inject(self):

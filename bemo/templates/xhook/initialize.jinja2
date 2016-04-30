@@ -1,6 +1,7 @@
-(function(window, document, bemoContext) {
-var head,
-    script;
+var document = window.document,
+    head,
+    script,
+    bemoContext = JSON.parse('{{ bemo }}');
 
 if (window.xhook === void 0) {
     head = document.getElementsByTagName('head').item(0);
@@ -12,4 +13,3 @@ if (window.xhook === void 0) {
 
     head.appendChild(script);
 }
-})(window, window.document, JSON.parse('{{ bemo }}'));

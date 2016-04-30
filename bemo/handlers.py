@@ -3,6 +3,8 @@
 import uuid
 from http import HTTPStatus
 
+from bemo import templates
+
 __all__ = (
     'Handler',
 )
@@ -15,3 +17,24 @@ class Handler(object):
         self.status = status
         self.headers = headers or {}
         self.body = body or {}
+
+        self._wd = None
+
+    def assert_call_count(self, expected):
+        assert self._call_count() == expected
+
+    def assert_called(self):
+        assert self._call_count()
+
+    def assert_called_with(self):
+        raise NotImplementedError
+
+    def assert_called_once_with(self):
+        raise NotImplementedError
+
+    def _call_count(self):
+        script = self._wd.execute_script
+
+        return script(templates.asserts__call_count({
+            'handler': self,
+        }))
