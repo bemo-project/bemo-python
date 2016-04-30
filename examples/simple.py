@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 
 from selenium import webdriver
-from selene import conditions, tools
+from selene.conditions import text
+from selene.tools import set_driver, visit, s
 
 import bemo
 
 
 wd = webdriver.Firefox()
-tools.set_driver(wd)
+set_driver(wd)
 
-tools.visit('https://accounts.google.com/SignUp')
+visit('https://accounts.google.com/SignUp')
 
 with bemo.Session(wd=wd) as session:
-    session.handle('InputValidator', body={
+    handler = session.handle('InputValidator', body={
         'input01': {
             'Valid': 'false',
             'ErrorMessage': 'Error!',
@@ -25,7 +26,12 @@ with bemo.Session(wd=wd) as session:
     })
     session.inject()
 
-    tools.s('#GmailAddress').set('John Snow')
-    tools.s('#submitbutton').click()
+    s('#GmailAddress').set('John Snow')
+    s('#submitbutton').click()
 
-    tools.s('#errormsg_0_GmailAddress').should_have(conditions.text('It work.'))
+    s('#errormsg_0_GmailAddress').should_have(text('It work.'))
+
+    handler.assert_called_once_with({
+        'method': 'POST',
+        'url': 'InputValidator?resource=SignUp',
+    })
