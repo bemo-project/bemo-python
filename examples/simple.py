@@ -31,4 +31,7 @@ with bemo.Session(wd=wd) as session:
 
     s('#errormsg_0_GmailAddress').should_have(text('It work.'))
 
-    handler.assert_call_count(1)
+    handler.assert_called_once_with({
+        'method': 'POST',
+        'url': 'InputValidator?resource=SignUp',
+    })

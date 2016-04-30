@@ -13,6 +13,7 @@ __all__ = (
     'xhook__release',
 
     'asserts__call_count',
+    'asserts__calls',
 )
 
 
@@ -25,6 +26,7 @@ _xhook__handlers = _env.get_template('xhook/handlers.jinja2')
 _xhook__enable = _env.get_template('xhook/enable.jinja2')
 _xhook__release = _env.get_template('xhook/release.jinja2')
 _asserts__call_count = _env.get_template('asserts/call_count.jinja2')
+_asserts__calls = _env.get_template('asserts/calls.jinja2')
 
 
 # Define helpers for templates
@@ -46,6 +48,10 @@ def xhook__release():
 
 def asserts__call_count(context):
     return render(_asserts__call_count, context=context)
+
+
+def asserts__calls(context):
+    return render(_asserts__calls, context=context)
 
 
 # Render templates helpers
