@@ -7,12 +7,12 @@ from setuptools import setup, find_packages
 setup(
     name='bemo',
     version='0.0.0',
-    description='TBD',
-    long_description=open('README.md', encoding='utf-8').read(),
+    description='It\'s simple way to mock your back-end from webdriver UI tests',
+    long_description=open('README.rst', encoding='utf-8').read(),
     author='Nikita Grishko',
     author_email='gr1n@protonmail.com',
     url='https://github.com/bemo-project/bemo-python',
-    download_url='TBD',
+    download_url='https://pypi.python.org/pypi/bemo/',
     license='MIT',
     packages=find_packages(exclude=(
         'tests.*',
@@ -22,11 +22,10 @@ setup(
     install_requires=(
         'Jinja2==2.8',
     ),
-    extras_require={},
     include_package_data=True,
     zip_safe=False,
     classifiers=(
-        'Development Status :: 1 - Planning',
+        'Development Status :: 2 - Pre-Alpha',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',

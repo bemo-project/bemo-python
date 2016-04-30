@@ -1,4 +1,4 @@
-.PHONY: clean develop sdist
+.PHONY: clean develop sdist rst
 
 PACKAGE=bemo
 
@@ -7,6 +7,7 @@ help:
 	@echo "  clean       => to clean clean all automatically generated files"
 	@echo "  develop     => to install $(PACKAGE) in 'development mode'"
 	@echo "  sdist       => to build $(PACKAGE)"
+	@echo "  rst         => to build reStructuredText files for PyPI"
 
 clean:
 	find . -name \*.pyc -delete
@@ -19,3 +20,6 @@ develop:
 
 sdist:
 	python setup.py sdist
+
+rst:
+	pandoc --from=markdown --to=rst --output=README.rst README.md
