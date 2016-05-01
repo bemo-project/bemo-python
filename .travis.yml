@@ -1,0 +1,12 @@
+language: python
+sudo: false
+python:
+  - "2.7"
+  - "3.5"
+install:
+  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then travis_retry pip install enum34 httpstatus35 mock; fi
+  # Get bemo to test bemo
+  - travis_retry pip install -e .
+  # Get test deps
+  - travis_retry pip install pytest-cov
+script: make test

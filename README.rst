@@ -1,5 +1,5 @@
-bemo |Requirements Status|
-==========================
+bemo |Requirements Status| |Build Status|
+=========================================
 
 Bemo(back-end mock) - it's simple way to mock your back-end from
 webdriver UI tests.
@@ -63,6 +63,11 @@ Usage
             'url': 'InputValidator?resource=SignUp',
         })
 
+Testing
+-------
+
+Just run ``tox`` to test package.
+
 License
 -------
 
@@ -71,3 +76,5 @@ details.
 
 .. |Requirements Status| image:: https://requires.io/github/bemo-project/bemo-python/requirements.svg?branch=master
    :target: https://requires.io/github/bemo-project/bemo-python/requirements/?branch=master
+.. |Build Status| image:: https://travis-ci.org/bemo-project/bemo-python.svg?branch=master
+   :target: https://travis-ci.org/bemo-project/bemo-python
