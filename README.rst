@@ -63,6 +63,11 @@ Usage
             'url': 'InputValidator?resource=SignUp',
         })
 
+Testing
+-------
+
+Just run ``tox`` to test package.
+
 License
 -------
 

@@ -52,6 +52,10 @@ Enjoy!
             'url': 'InputValidator?resource=SignUp',
         })
 
+## Testing
+
+Just run `tox` to test package.
+
 ## License
 
 *bemo* is licensed under the MIT license. See the license file for details.
