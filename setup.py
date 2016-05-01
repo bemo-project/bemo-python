@@ -22,6 +22,12 @@ setup(
     install_requires=(
         'Jinja2==2.8',
     ),
+    extras_require={
+        'py2x': [
+            'enum34',
+            'httpstatus35',
+        ],
+    },
     include_package_data=True,
     zip_safe=False,
     classifiers=(

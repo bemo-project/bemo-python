@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import uuid
-from http import HTTPStatus
+
+try:
+    from http import HTTPStatus
+except ImportError:
+    from httpstatus import HTTPStatus
 
 from bemo import functional, templates
 

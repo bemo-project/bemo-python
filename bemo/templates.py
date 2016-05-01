@@ -4,8 +4,6 @@ import json
 
 from jinja2 import Environment, PackageLoader
 
-from bemo import handlers
-
 __all__ = (
     'xhook__initialize',
     'xhook__handlers',
@@ -60,6 +58,9 @@ class JSONEncoder(json.JSONEncoder):
     JSONEncoder subclass that knows how to encode `bemo` handlers.
     """
     def default(self, o):
+        # Import here to avoid cycle imports in py2x
+        from bemo import handlers
+
         if isinstance(o, handlers.Handler):
             return {
                 'uid': o.uid,
