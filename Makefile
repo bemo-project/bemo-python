@@ -1,4 +1,4 @@
-.PHONY: clean develop test sdist rst
+.PHONY: clean develop test lint sdist rst
 
 PACKAGE=bemo
 
@@ -7,6 +7,7 @@ help:
 	@echo "  clean       => to clean clean all automatically generated files"
 	@echo "  develop     => to install $(PACKAGE) in 'development mode'"
 	@echo "  test        => to test $(PACKAGE)"
+	@echo "  lint        => to run linters"
 	@echo "  sdist       => to build $(PACKAGE)"
 	@echo "  rst         => to build reStructuredText files for PyPI"
 
@@ -21,6 +22,9 @@ develop:
 
 test:
 	py.test --cov-report term --cov-report html --cov=bemo -v
+
+lint:
+	flake8 bemo examples tests
 
 sdist:
 	python setup.py sdist
