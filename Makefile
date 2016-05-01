@@ -1,4 +1,4 @@
-.PHONY: clean develop sdist rst
+.PHONY: clean develop test sdist rst
 
 PACKAGE=bemo
 
@@ -6,6 +6,7 @@ help:
 	@echo "Please use 'make <target>' where <target> is one of"
 	@echo "  clean       => to clean clean all automatically generated files"
 	@echo "  develop     => to install $(PACKAGE) in 'development mode'"
+	@echo "  test        => to test $(PACKAGE)"
 	@echo "  sdist       => to build $(PACKAGE)"
 	@echo "  rst         => to build reStructuredText files for PyPI"
 
@@ -17,6 +18,9 @@ clean:
 
 develop:
 	python setup.py develop
+
+test:
+	py.test --cov-report term --cov-report html --cov=bemo -v
 
 sdist:
 	python setup.py sdist
