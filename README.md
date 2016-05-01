@@ -1,4 +1,4 @@
-# bemo [![Requirements Status](https://requires.io/github/bemo-project/bemo-python/requirements.svg?branch=master)](https://requires.io/github/bemo-project/bemo-python/requirements/?branch=master)
+# bemo [![Requirements Status](https://requires.io/github/bemo-project/bemo-python/requirements.svg?branch=master)](https://requires.io/github/bemo-project/bemo-python/requirements/?branch=master) [![Build Status](https://travis-ci.org/bemo-project/bemo-python.svg?branch=master)](https://travis-ci.org/bemo-project/bemo-python)
 
 Bemo(back-end mock) - it's simple way to mock your back-end from webdriver UI tests.
 
