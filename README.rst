@@ -13,7 +13,7 @@ Install ``bemo`` using `pip <http://www.pip-installer.org/>`__:
 
     $ pip install bemo
 
-...or install ``bemo`` running command below if use want to use Python
+...or install ``bemo`` running command below if you want to use Python
 2.7:
 
 ::

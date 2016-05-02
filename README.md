@@ -8,7 +8,7 @@ Install `bemo` using [pip](http://www.pip-installer.org/):
 
     $ pip install bemo
 
-...or install `bemo` running command below if use want to use Python 2.7:
+...or install `bemo` running command below if you want to use Python 2.7:
 
     $ pip install bemo[py2x]
 
