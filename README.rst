@@ -1,5 +1,5 @@
-bemo |Requirements Status| |Build Status| |Code Health|
-=======================================================
+bemo |Requirements Status| |Build Status| |Code Health| |PyPI| |Supported Python versions|
+==========================================================================================
 
 Bemo(back-end mock) - it's simple way to mock your back-end from
 webdriver UI tests.
@@ -80,3 +80,7 @@ details.
    :target: https://travis-ci.org/bemo-project/bemo-python
 .. |Code Health| image:: https://landscape.io/github/bemo-project/bemo-python/master/landscape.svg?style=flat
    :target: https://landscape.io/github/bemo-project/bemo-python/master
+.. |PyPI| image:: https://img.shields.io/pypi/v/bemo.svg
+   :target: https://pypi.python.org/pypi/bemo
+.. |Supported Python versions| image:: https://img.shields.io/pypi/pyversions/bemo.svg
+   :target: https://pypi.python.org/pypi/bemo
