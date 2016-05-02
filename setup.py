@@ -31,7 +31,7 @@ class Tox(TestCommand):
 
 setup(
     name='bemo',
-    version='0.0.2',
+    version='0.0.3.dev0',
     description='It\'s simple way to mock your back-end from webdriver UI tests',
     long_description=open('README.rst', encoding='utf-8').read(),
     author='Nikita Grishko',
