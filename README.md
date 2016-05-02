@@ -1,4 +1,4 @@
-# bemo [![Requirements Status](https://requires.io/github/bemo-project/bemo-python/requirements.svg?branch=master)](https://requires.io/github/bemo-project/bemo-python/requirements/?branch=master) [![Build Status](https://travis-ci.org/bemo-project/bemo-python.svg?branch=master)](https://travis-ci.org/bemo-project/bemo-python)
+# bemo [![Requirements Status](https://requires.io/github/bemo-project/bemo-python/requirements.svg?branch=master)](https://requires.io/github/bemo-project/bemo-python/requirements/?branch=master) [![Build Status](https://travis-ci.org/bemo-project/bemo-python.svg?branch=master)](https://travis-ci.org/bemo-project/bemo-python) [![Code Health](https://landscape.io/github/bemo-project/bemo-python/master/landscape.svg?style=flat)](https://landscape.io/github/bemo-project/bemo-python/master) [![PyPI](https://img.shields.io/pypi/v/bemo.svg)](https://pypi.python.org/pypi/bemo) [![Supported Python versions](https://img.shields.io/pypi/pyversions/bemo.svg)](https://pypi.python.org/pypi/bemo)
 
 Bemo(back-end mock) - it's simple way to mock your back-end from webdriver UI tests.
 
@@ -8,7 +8,7 @@ Install `bemo` using [pip](http://www.pip-installer.org/):
 
     $ pip install bemo
 
-...or install `bemo` running command below if use want to use Python 2.7:
+...or install `bemo` running command below if you want to use Python 2.7:
 
     $ pip install bemo[py2x]
 

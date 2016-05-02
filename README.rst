@@ -1,5 +1,5 @@
-bemo |Requirements Status| |Build Status|
-=========================================
+bemo |Requirements Status| |Build Status| |Code Health| |PyPI| |Supported Python versions|
+==========================================================================================
 
 Bemo(back-end mock) - it's simple way to mock your back-end from
 webdriver UI tests.
@@ -13,7 +13,7 @@ Install ``bemo`` using `pip <http://www.pip-installer.org/>`__:
 
     $ pip install bemo
 
-...or install ``bemo`` running command below if use want to use Python
+...or install ``bemo`` running command below if you want to use Python
 2.7:
 
 ::
@@ -78,3 +78,9 @@ details.
    :target: https://requires.io/github/bemo-project/bemo-python/requirements/?branch=master
 .. |Build Status| image:: https://travis-ci.org/bemo-project/bemo-python.svg?branch=master
    :target: https://travis-ci.org/bemo-project/bemo-python
+.. |Code Health| image:: https://landscape.io/github/bemo-project/bemo-python/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/bemo-project/bemo-python/master
+.. |PyPI| image:: https://img.shields.io/pypi/v/bemo.svg
+   :target: https://pypi.python.org/pypi/bemo
+.. |Supported Python versions| image:: https://img.shields.io/pypi/pyversions/bemo.svg
+   :target: https://pypi.python.org/pypi/bemo
