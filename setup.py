@@ -45,7 +45,7 @@ setup(
         'example',
     )),
     install_requires=(
-        'Jinja2==2.11.3',
+        'Jinja2==3.1.3',
     ),
     extras_require={
         'py2x': [
